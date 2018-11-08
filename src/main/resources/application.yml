@@ -1,0 +1,22 @@
+spring:
+  application.name: githubfeign-service
+
+logging: 
+  level:
+    net.xtnt.githubfeign: DEBUG
+
+
+eureka:
+  client:
+    enabled: false
+    
+github-service:
+ ribbon:
+   listOfServers: api.github.com:443
+   isSecure: true
+   
+application.github.token-generator:
+  #JWT expiration time (10 minute maximum)
+  expire-seconds: 300
+  issuer: 20387
+  signingPemFile: classpath:extant-dev-app.2018-11-07.private-key.pem
