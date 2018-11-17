@@ -66,6 +66,14 @@ public class GitHubAppTokenGenerator implements InitializingBean {
 		return appAccessToken;
 	}
 
+	
+	public String getJwtAuthHeader() throws JOSEException {
+		String accessToken = generateJwtAccessToken();
+		String authorizationHeader = "bearer " + accessToken;
+		return authorizationHeader;
+		
+	}
+	
 	public String generateJwtAccessToken() throws JOSEException {
 		// First generate a JWT that we can use to call github, we may just want to
 		// reuse these until expiry later, but

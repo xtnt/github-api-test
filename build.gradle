@@ -38,8 +38,11 @@ dependencies {
 	//JWT Signing
 	compile('com.nimbusds:nimbus-jose-jwt:6.3')
 	compile('joda-time:joda-time')
-    compile('commons-io:commons-io:2.6') 
+    compile('commons-io:commons-io:2.6')
     
+    //required to use PATCH
+    compile("com.netflix.feign:feign-httpclient:8.3.0") 
+            
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 }
 
